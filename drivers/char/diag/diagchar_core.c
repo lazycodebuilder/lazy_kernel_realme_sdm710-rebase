@@ -2356,6 +2356,7 @@ static int diag_ioctl_query_pd_logging(struct diag_logging_mode_param_t *param)
 	return ret;
 }
 
+
 static int diag_ioctl_register_callback(unsigned long ioarg)
 {
 	int err = 0;
@@ -2732,6 +2733,7 @@ long diagchar_ioctl(struct file *filp,
 			return -EFAULT;
 		result = diag_ioctl_query_pd_logging(&mode_param);
 		break;
+
 	}
 	return result;
 }
