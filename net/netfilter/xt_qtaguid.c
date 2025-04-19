@@ -45,7 +45,6 @@
 #define XT_SOCKET_SUPPORTED_HOOKS \
 	((1 << NF_INET_PRE_ROUTING) | (1 << NF_INET_LOCAL_IN))
 
-
 static const char *module_procdirname = "xt_qtaguid";
 static struct proc_dir_entry *xt_qtaguid_procdir;
 
@@ -1240,8 +1239,10 @@ static void iface_stat_update_from_skb(const struct sk_buff *skb,
 
 static void tag_stat_update(struct tag_stat *tag_entry,
 			enum ifs_tx_rx direction, int proto, int bytes)
+
 {
 	int active_set;
+
 	active_set = get_active_counter_set(tag_entry->tn.tag);
 	MT_DEBUG("qtaguid: tag_stat_update(tag=0x%llx (uid=%u) set=%d "
 		 "dir=%d proto=%d bytes=%d)\n",
@@ -2972,6 +2973,7 @@ static int __init qtaguid_proc_register(struct proc_dir_entry **res_procdir)
 	 * TODO: add support counter hacking
 	 * xt_qtaguid_stats_file->write_proc = qtaguid_stats_proc_write;
 	 */
+
 	return 0;
 
 no_stats_entry:
