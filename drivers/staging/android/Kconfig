@@ -54,6 +54,7 @@ config ANDROID_LMK_NOTIFY_TRIGGER
 	"/sys/module/lowmemorykiller/parameters/notify_trigger".
 
 source "drivers/staging/android/ion/Kconfig"
+source "drivers/staging/android/oplus_hans/Kconfig"
 
 endif # if ANDROID
 

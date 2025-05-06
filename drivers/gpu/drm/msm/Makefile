@@ -1,4 +1,5 @@
 ccflags-y := -Iinclude/drm -Idrivers/gpu/drm/msm -Idrivers/gpu/drm/msm/dsi-staging -Idrivers/gpu/drm/msm/dp
+ccflags-y += -Idrivers/gpu/drm/msm/dsi-staging/oppo_display
 ccflags-$(CONFIG_DRM_MSM_DSI) += -Idrivers/gpu/drm/msm/dsi
 ccflags-$(CONFIG_DRM_MSM_DSI_PLL) += -Idrivers/gpu/drm/msm/dsi
 ccflags-y += -Idrivers/gpu/drm/msm/sde
@@ -135,7 +136,9 @@ msm_drm-$(CONFIG_DRM_MSM_DSI_STAGING) += dsi-staging/dsi_phy.o \
 				dsi-staging/dsi_display.o \
 				dsi-staging/dsi_panel.o \
 				dsi-staging/dsi_clk_manager.o \
-				dsi-staging/dsi_display_test.o
+				dsi-staging/dsi_display_test.o \
+				dsi-staging/oppo_display/dsi_oppo_support.o \
+				dsi-staging/oppo_display/oppo_display_private_api.o
 
 msm_drm-$(CONFIG_DRM_MSM_DSI_PLL) += dsi/pll/dsi_pll.o \
 				dsi/pll/dsi_pll_28nm.o

@@ -126,3 +126,5 @@ config SCSI_UFSHCD_CMD_LOGGING
 
 	  Select this if you want above mentioned debug information captured.
 	  If unsure, say N.
+
+source "drivers/scsi/ufs/oplus_ufs_signal/Kconfig"
